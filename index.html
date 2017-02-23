@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mushroom Mania</title>
+    <link rel="stylesheet" type="text/css" href="lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body ng-app="ShroomApp">
+  <h1>Badger, Badger, Badger, Badger! Mushroom, Mushroom!</h1>
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-4">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div ng-controller="ShroomCtrl" class="col-xs-4 col-xs-offset-4">
+      <label class="radio-inline">
+        <input type="radio" name="optradio" ng-model="val.edible" value="false">Poisonous
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="optradio" ng-model="val.edible" value="true">Non-Poisonous
+      </label>
+      <ul class="list-group" ng-repeat="shroom in shrooms | filter: searchText">
+        <li ng-repeat="(key, val) in shroom" class="list-group-item">
+          <strong>{{key}}:</strong> {{val.description}}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script>
+  <script type="text/javascript" src="lib/node_modules/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="app/app.js"></script>
+  <script type="text/javascript" src="app/controllers/ShroomCtrl.js"></script>
+</body>
+</html>
