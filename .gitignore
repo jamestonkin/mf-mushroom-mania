@@ -27,6 +27,6 @@ Temporary Items
 
 node_modules
 lib/.sass-cache
-javascripts/fb-getter.js
+app/values/fb-creds.js
 
 # End of https://www.gitignore.io/api/osx
